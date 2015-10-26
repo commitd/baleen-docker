@@ -7,7 +7,7 @@ This projects contains two approaches to using Baleen with Docker.
 * A Dockerfile providing a 'Baleen Docker application'. This is a vanilla Baleen which you can configure and integrate with outside services if you need to, or you can just use it as a command line applicaiton to process files as the baleen-docker/example does.
 * Docker Compose which run Baleen alongside Mongo and Elasticsearch. It provides a more comprehensive configuration example which allow you to use Baleen straight away with your documents you place in the baleen/data directory.
 
-You can use this directly as a docker images pulled from Docker Hub (http://hub.docker.com/tenode/baleen) or look at the GitHub repo for scripts / config / examples (https://github.com/tenode/baleen-docker). These Docker implementations are examples and should be further configured and secured for production use.
+You can use this directly as a docker images pulled from Docker Hub (https://hub.docker.com/r/tenode/baleen/) or look at the GitHub repo for scripts / config / examples (https://github.com/tenode/baleen-docker). These Docker implementations are examples and should be further configured and secured for production use.
 
 In both cases you will wish to provide your own Baleen configuration, though a comprehensive example file is included to allow you to quickly get going.
 
