@@ -1,0 +1,5 @@
+This is an example file which demonstrates the Baleen's capabilties.
+
+Baleen was written by Dstl, which is based in the UK. It's main developer is James Baker.
+
+You can learn, contribute or raise issues about  Baleen via its Github page http://github.com/dstl/baleen.
