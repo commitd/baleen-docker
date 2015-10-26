@@ -4,8 +4,8 @@ Docker container for [Baleen](http://github.com/dstl/baleen).
 
 This projects contains two approaches to using Baleen with Docker.
 
-* A Dockerfile providing a 'Baleen Docker application'. 
-* Docker Compose which run Baleen alongside Mongo and Elasticsearch
+* A Dockerfile providing a 'Baleen Docker application'. This is a vanilla Baleen which you can configure and integrate with outside services if you need to, or you can just use it as a command line applicaiton to process files as the baleen-docker/example does.
+* Docker Compose which run Baleen alongside Mongo and Elasticsearch. It provides a more comprehensive configuration example which allow you to use Baleen straight away with your documents you place in the baleen/data directory.
 
 You can use this directly as a docker images pulled from Docker Hub (http://hub.docker.com/tenode/baleen) or look at the GitHub repo for scripts / config / examples (https://github.com/tenode/baleen-docker). These Docker implementations are examples and should be further configured and secured for production use.
 
@@ -67,7 +67,9 @@ Or, to run and wait:
 
 Both of these will download and build Elasticsearch and Mongo images, and configure Baleen to use them. The Elasticsearch and Mongo services will be available on the host machine on their standard ports (9200 and 27017 respectively).
 
-YOu can configure Baleen by editting the files in the /baleen directory. The sample configuration provided will read from the baleen/data directory, process the data and download output to the Elasticseach and Mongo. For example, after running Baleen you can search for documents with urls using Elasticsearch:
+Warning! To allow you to easily access Elasticsearch from an online tools of your choice, such as [ElasticHQ](http://www.elastichq.org/app/index.php), the docker-compose image has CORS enabled (the default is disabled). You can disable this by commenting out the command: "-Des.http.cors.enabled=true" or change the allowed origins (-Dhttp.cors.allow-origin) to just the tools are using. See https://github.com/elastic/elasticsearch/issues/7151 for more details.
+
+You can configure Baleen by editting the files in the /baleen directory. The sample configuration provided will read from the baleen/data directory, process the data and download output to the Elasticseach and Mongo. For example, after running Baleen you can search for documents with urls using Elasticsearch:
 
     $ curl localhost:9200/baleen_index/_search?q=entities.type=Url\&pretty
 

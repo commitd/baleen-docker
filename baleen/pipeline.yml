@@ -17,7 +17,7 @@ collectionreader:
 annotators:
 - language.OpenNLP
 - class: misc.DocumentTypeByLocation
-  baseDirectory: ./data
+  baseDirectory: /baleen/data
 - gazetteer.Country
 - class: gazetteer.Mongo
   type: Buzzword
@@ -55,15 +55,15 @@ annotators:
 - regex.Url
 - regex.Volume
 - regex.Weight
-# - class: stats.OpenNLP
-#   model: /opt/baleen/models/en-ner-location.bin
-#   type: Location
-# - class: stats.OpenNLP
-#   model: /opt/baleen/models/en-ner-organization.bin
-#   type: Organisation
-# - class: stats.OpenNLP
-#   model: /opt/baleen/models/en-ner-person.bin
-#   type: Person
+- class: stats.OpenNLP
+  model: /opt/baleen/models/en-ner-location.bin
+  type: Location
+- class: stats.OpenNLP
+  model: /opt/baleen/models/en-ner-organization.bin
+  type: Organisation
+- class: stats.OpenNLP
+  model: /opt/baleen/models/en-ner-person.bin
+  type: Person
 - cleaners.MergeAdjacentQuantities
 - grammatical.NPTitleEntity
 - grammatical.QuantityNPEntity
