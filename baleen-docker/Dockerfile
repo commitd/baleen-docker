@@ -3,7 +3,7 @@ FROM committed/java
 MAINTAINER Dstl <https://github.com/dstl/baleen>
 
 # Baleen installation and configuration
-ENV BALEEN_VERSION 2.2.0
+ENV BALEEN_VERSION 2.4.0
 
 # Download the (English) OpenNLP Name Entity Recognition models
 RUN mkdir -p /opt/baleen/models \
